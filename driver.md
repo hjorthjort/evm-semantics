@@ -10,15 +10,10 @@ requires "evm-node.k"
 
 ```k
 requires "evm.k"
-requires "analysis.k"
 
 module ETHEREUM-SIMULATION
     imports EVM
     imports K-REFLECTION
-```
-
-```{.k .standalone}
-    imports EVM-ANALYSIS
 ```
 
 ```{.k .node}
