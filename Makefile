@@ -109,7 +109,7 @@ concrete_tangle:=.k:not(.node):not(.symbolic),.standalone,.concrete
 symbolic_tangle:=.k:not(.node):not(.concrete),.standalone,.symbolic
 node_tangle:=.k:not(.standalone):not(.symbolic),.node,.concrete
 
-k_files:=driver.k data.k network.k evm.k analysis.k krypto.k edsl.k evm-node.k
+k_files:=driver.k data.k network.k evm.k krypto.k edsl.k evm-node.k
 ocaml_files:=$(patsubst %,.build/ocaml/%,$(k_files))
 java_files:=$(patsubst %,.build/java/%,$(k_files))
 node_files:=$(patsubst %,.build/node/%,$(k_files))
@@ -307,9 +307,6 @@ test-interactive: $(interactive_tests:=.test)
 
 tests/interactive/%.json.test: tests/interactive/%.json
 	$(TEST) test --backend $(TEST_CONCRETE_BACKEND) $<
-
-tests/interactive/gas-analysis/%.evm.test: tests/interactive/gas-analysis/%.evm tests/interactive/gas-analysis/%.evm.out
-	MODE=GASANALYZE $(TEST) test --backend $(TEST_CONCRETE_BACKEND) $<
 
 # ProofTests
 
