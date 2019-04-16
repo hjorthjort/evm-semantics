@@ -320,7 +320,7 @@ test-java: tests/ethereum-tests/BlockchainTests/GeneralStateTests/stExample/add1
 	./kevm run --backend java $< | diff - tests/templates/output-success-java.json
 
 $(proof_specs_dir)/%.test: $(proof_specs_dir)/% split-proof-tests
-	$(TEST) test --backend $(TEST_SYMBOLIC_BACKEND) $<
+	$(TEST) test --backend $(TEST_SYMBOLIC_BACKEND) $< --format-failures
 
 active_proof_tests=resources      \
                    bihu           \
