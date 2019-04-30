@@ -327,7 +327,6 @@ $(proof_specs_dir)/%.test: $(proof_specs_dir)/% split-proof-tests
 
 active_proof_tests=resources      \
                    bihu           \
-                   erc20/gno      \
                    erc20/hobby    \
                    erc20/hkg      \
                    erc20/ds-token
